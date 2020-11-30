@@ -17,6 +17,11 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 ## Installation
 
+### One "click" installation ☕️
+
+`bash <(curl -s https://raw.githubusercontent.com/NiekKeijzer/mac-dev-playbook/master/install.sh)`
+### Original instructions
+
   1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the installer).
   2. [Install Ansible](http://docs.ansible.com/intro_installation.html).
   3. Clone this repository to your local drive.
