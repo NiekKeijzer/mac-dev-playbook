@@ -13,6 +13,8 @@
   roles:
     - role: geerlingguy.homebrew
       tags: ['homebrew']
+      environment:
+        PATH: "{{ homebrew_prefix }}:{{ ansible_env.PATH }}"
     - role: geerlingguy.dotfiles
       when: configure_dotfiles
       tags: ['dotfiles']

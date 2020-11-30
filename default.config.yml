@@ -1,9 +1,9 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: true
-configure_terminal: true
-configure_osx: true
+configure_dotfiles: false
+configure_terminal: false
+configure_osx: false
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -14,7 +14,7 @@ sudoers_custom_config: ''
 
 dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/.dotfiles
 dotfiles_files:
   - .zshrc
   - .gitignore
@@ -22,52 +22,73 @@ dotfiles_files:
   - .osx
   - .vimrc
 
+homebrew_prefix: "{{ ansible_env.HOME }}/.brew"
+
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
   - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
-  - git
-  - github/gh/gh
-  - go
+  - composer
+  - direnv
+  - flock
+  - fnm
+  - gcc
+  - git 
   - gpg
-  - httpie
-  - iperf
+  - hadolint 
+  - hcloud 
+  - helm
+  - iperf 
+  - jq
+  - kubernetes-cli
   - libevent
-  - sqlite
+  - libsass
+  - libuv
   - mcrypt
-  - nmap
+  - minikube
+  - nmap 
   - node
-  - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
   - openssl
-  - pv
-  - wget
-  - wrk
+  - pipx
+  - pyenv 
+  - pyenv-virtualenv
+  - pyenv-virtualenvwrapper
+  - readline
+  - ssh-copy-id
+  - speedtest-cli 
+  - stow
+  - sqlite
+  - telnet 
+  - terminal-notifier
+  - terraform 
+  - tor
+  - wget 
+  - zsh 
+  - zsh-completions
+  - zsh-syntax-highlighting
 
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+  - homebrew/cask-fonts
 
-homebrew_cask_appdir: /Applications
+homebrew_cask_appdir: ~/Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
+  - bitwarden
+  - cyberduck
+  - daisydisk
+  - docker 
   - firefox
-  - google-chrome
-  - handbrake
-  - licecap
-  - sequel-pro
-  - slack
-  - sublime-text
-  - transmit
-  - vagrant
+  #- font-fira-code-nerd-font
+  #- font-hack-nerd-font
+  - insomnia
+  - nextcloud 
+  - opera
+  - pycharm
+  - spotify
+  #- sublime-text
+  - tunnelblick 
+  - vienna 
+  - whatpulse
+  - whatsapp
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -95,6 +116,11 @@ pip_packages: []
 # - name: mkdocs
 #   state: present # present/absent/latest, default: present
 #   version: "0.16.3" # default: N/A
+
+pipx_packages:
+  - cookiecutter
+  - pre-commit
+  - poetry
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
