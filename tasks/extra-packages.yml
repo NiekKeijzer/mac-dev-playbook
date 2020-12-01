@@ -24,6 +24,10 @@
     executable: "{{ item.executable | default(omit) }}"
   with_items: "{{ pip_packages }}"
 
+- name: Install global Pipx packages.
+  shell: pipx install {{ item }}
+  with_items: "{{ pipx_packages }}"
+
 - name: Install global Ruby gems.
   gem:
     name: "{{ item.name | default(item) }}"
