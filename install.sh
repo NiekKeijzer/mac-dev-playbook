@@ -39,7 +39,7 @@ main()
   install_dependencies
 
   # Run Ansible
-  exec "$venv_dir/bin/ansible-playbook $project_dir/main.yml -i inventory --ask-become-pass"
+  exec "$venv_dir/bin/ansible-playbook $project_dir/main.yml -i $project_dir/inventory --ask-become-pass"
 }
 
 main
