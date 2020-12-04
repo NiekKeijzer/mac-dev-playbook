@@ -1,5 +1,4 @@
-ansible==2.8  # Needed until: https://github.com/geerlingguy/ansible-role-homebrew/issues/148 
-ansible-base==2.10.3
+ansible==2.9.1  # Needed until: https://github.com/geerlingguy/ansible-role-homebrew/issues/148 
 cffi==1.14.4
 cryptography==3.2.1
 Jinja2==2.11.2
