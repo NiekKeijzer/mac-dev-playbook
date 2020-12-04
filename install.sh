@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-project_dir="$HOME/.mac-dev-test"
+project_dir="$HOME/.setup/mac-dev"
 venv_dir="$project_dir/.env"
 
 clone_repo() 

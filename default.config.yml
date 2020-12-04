@@ -1,4 +1,5 @@
 ---
+setup_directory: ~/.setup
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
@@ -12,9 +13,9 @@ sudoers_custom_config: ''
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/NiekKeijzer/dotfiles.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Projects/dotfiles
+dotfiles_repo_local_destination: "{{ setup_directory }}/dotfiles"
 dotfiles_files:
   - .zshrc
   - .gitignore

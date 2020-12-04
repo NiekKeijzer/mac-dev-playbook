@@ -1,0 +1,27 @@
+---
+- name: Check if Stow is installed
+  shell: command -v stow >/dev/null 2>&1
+  register: stow_exist
+  ignore_errors: true
+
+- fail: 
+    msg: Stow must be installed before dotfiles can be setup
+  when: stow_exist.rc != 0
+  
+
+- name: Ensure dotfiles repository is cloned locally 
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ dotfiles_repo_local_destination }}"
+    version: "{{ dotfiles_repo_version | default('master') }}"
+
+- name: Discover cloned dotfiles 
+  find:
+    path: "{{ dotfiles_repo_local_destination }}"
+    file_type: directory 
+  register: dotfiles_directories
+
+- name: Setup dotfiles for discovered files
+  debug:
+    msg: "stow -t ~ {{ item.path }}"
+  with_items: "{{ dotfiles_directories.files }}"
