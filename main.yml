@@ -10,8 +10,6 @@
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
 
-    - include_tasks: tasks/dotfiles.yml
-
   roles:
     - role: geerlingguy.homebrew
       tags: ['homebrew']
