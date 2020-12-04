@@ -28,7 +28,7 @@ install_dependencies()
    xcode-select --install
   fi
 
-  eval "$venv_dir/bin/ansible-galaxy install -r requirements.yml"
+  eval "$venv_dir/bin/ansible-galaxy install -r $project_dir/requirements.yml"
 }
 
 main() 
@@ -39,7 +39,7 @@ main()
   install_dependencies
 
   # Run Ansible
-  exec "$venv_dir/bin/ansible-playbook main.yml -i inventory --ask-become-pass"
+  exec "$venv_dir/bin/ansible-playbook $project_dir/main.yml -i inventory --ask-become-pass"
 }
 
 main
