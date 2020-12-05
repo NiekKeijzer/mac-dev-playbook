@@ -9,7 +9,7 @@
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
-
+  
   roles:
     - role: geerlingguy.homebrew
       tags: ['homebrew']

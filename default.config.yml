@@ -16,19 +16,13 @@ sudoers_custom_config: ''
 dotfiles_repo: https://github.com/NiekKeijzer/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: "{{ setup_directory }}/dotfiles"
-dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
-  - .osx
-  - .vimrc
 
 homebrew_group: brew
 homebrew_installed_packages:
   - autoconf
   - composer
   - direnv
-  - flock
+    # - flock
   - fnm
   - gcc
   - git 
@@ -38,7 +32,6 @@ homebrew_installed_packages:
   - hcloud 
   - helm
   - iperf 
-  - iterm2
   - jq
   - kubernetes-cli
   - libevent
@@ -52,7 +45,7 @@ homebrew_installed_packages:
   - pipx
   - pyenv 
   - pyenv-virtualenv
-  - pyenv-virutalenvwrapper
+  - pyenv-virtualenvwrapper
   - readline
   - ssh-copy-id
   - speedtest-cli 
@@ -82,6 +75,7 @@ homebrew_cask_apps:
   - font-fira-code-nerd-font
   - font-hack-nerd-font
   - insomnia
+  - iterm2
   - mailspring
   - nextcloud 
   - opera
@@ -92,7 +86,7 @@ homebrew_cask_apps:
   - tunnelblick 
   - vagrant
   - vienna 
-  - whatpulse
+    # - whatpulse
   - whatsapp
 
 # See `geerlingguy.mas` role documentation for usage instructions.

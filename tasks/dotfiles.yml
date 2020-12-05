@@ -22,6 +22,5 @@
   register: dotfiles_directories
 
 - name: Setup dotfiles for discovered files
-  debug:
-    msg: "stow -t ~ {{ item.path }}"
+  shell: "stow -t ~ {{ item.path }}"
   with_items: "{{ dotfiles_directories.files }}"
