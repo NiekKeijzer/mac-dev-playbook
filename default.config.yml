@@ -33,6 +33,7 @@ homebrew_installed_packages:
   - helm
   - iperf 
   - jq
+  - k3d
   - kubernetes-cli
   - libevent
   - libsass
